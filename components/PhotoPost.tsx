@@ -8,6 +8,7 @@ interface PhotoPostProps {
 }
 
 const PhotoPost: React.FC<PhotoPostProps> = ({ imageUrl, likes, dislikes, comments }) => {
+  console.log('imageUrl----', imageUrl)
   return (
     <div>
       <img src={imageUrl} alt="Photo" />
