@@ -14,14 +14,12 @@ const Home: React.FC = () => {
           imageUrl="https://example.com/photo1.jpg"
           likes={10}
           dislikes={2}
-          comments={["Comment 1", "Comment 2"]}
-        />
+          comments={["Comment 1", "Comment 2"]} initialComments={""}        />
         <PhotoPost
           imageUrl="https://example.com/photo2.jpg"
           likes={8}
           dislikes={1}
-          comments={["Comment 3", "Comment 4"]}
-        />
+          comments={["Comment 3", "Comment 4"]} initialComments={""}        />
       </div>
 
       <div>
@@ -30,14 +28,12 @@ const Home: React.FC = () => {
           videoUrl="https://example.com/video1.mp4"
           likes={15}
           dislikes={3}
-          comments={["Comment 5", "Comment 6"]}
-        />
+          comments={["Comment 5", "Comment 6"]} likeCount={0} dislikeCount={0} initialComments={""}        />
         <VideoPost
           videoUrl="https://example.com/video2.mp4"
           likes={12}
           dislikes={2}
-          comments={["Comment 7", "Comment 8"]}
-        />
+          comments={["Comment 7", "Comment 8"]} likeCount={0} dislikeCount={0} initialComments={""}        />
       </div>
     </div>
   );
