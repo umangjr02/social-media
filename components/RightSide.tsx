@@ -59,7 +59,7 @@ const friendData = [
 const RightSide: React.FC = () => {
   return (
     <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-      <h2 className="text-2xl font-semibold mb-4">Friends List</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-black">Friends List</h2>
       <div className="flex flex-col gap-4">
         {friendData.map((friend) => (
           <div
@@ -72,8 +72,7 @@ const RightSide: React.FC = () => {
                   <UserProfile
                     userName={friend.name}
                     profileImage={friend.profileImage}
-                    userBioDetails={[]}
-                  />
+                    userBioDetails={[]} imageWidth={20} imageHeight={20}                  />
                 </div>
               </div>
             </Link>

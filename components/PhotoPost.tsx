@@ -41,6 +41,8 @@ const PhotoPost: React.FC<PhotoPostProps> = ({
           <Link href="/userProfile">
             <UserProfile
               userName="Umang Rathod"
+              imageWidth={20}
+              imageHeight={20}
               showAddFriendButton={showAddFriendButton}
               onAddFriendClick={handleAddFriendClick}
               profileImage={""}
@@ -64,14 +66,7 @@ const PhotoPost: React.FC<PhotoPostProps> = ({
           >
             <div>
               <UserProfile 
-              // onClick={() => {
-              //   router.push({
-              //     pathname: "/userProfile",
-              //     query: { name: `Testing user` }
-              //   })
-              // }}
-              
-              userName={comment.user} profileImage={""} userBioDetails={[]} />
+                userName={comment.user} profileImage={""} userBioDetails={[]} imageWidth={0} imageHeight={0} />
             </div>
             {comment.text}
           </li>

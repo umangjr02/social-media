@@ -9,7 +9,7 @@ import AddFriendButton from "@/common/AddFriendButton";
 import Link from "next/link";
 
 const VideoPost: React.FC<VideoPostProps> = ({
-  videoUrl,
+  videoUrl, // Pass the external video URL as a prop
   likeCount: initialLikes,
   dislikeCount: initialDislikes,
   comments: initialComments,
@@ -41,14 +41,15 @@ const VideoPost: React.FC<VideoPostProps> = ({
               showAddFriendButton={showAddFriendButton}
               onAddFriendClick={handleAddFriendClick}
               profileImage={""}
-              userBioDetails={[]}
-            />
+              userBioDetails={[]} imageWidth={0} imageHeight={0}            />
           </Link>
           <AddFriendButton onClick={handleAddFriendClick} />
         </div>
 
         <div className="relative">
-        <VideoPost videoUrl="/my-video.mp4" comments={[]} likeCount={0} dislikeCount={0} />
+          <video loop autoPlay className="w-full" controls>
+            <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
       <div className="p-4">

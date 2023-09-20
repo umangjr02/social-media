@@ -6,6 +6,9 @@ import LeftBio from "./LeftBio";
 import PhotoPost from "./PhotoPost";
 import VideoPost from "./VideoPost";
 import UserProfile from "@/common/UserProfile";
+import page from "@/app/userProfile/page";
+import ImageComponent from "./ImageComponent";
+import RightSide from "./RightSide";
 
 export{
     Hero,
@@ -16,4 +19,8 @@ export{
     AddFriendButton,
     CommentInput,
     LikeDislike,
+    page,
+    ImageComponent,
+    RightSide,
+
 }
