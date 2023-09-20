@@ -58,3 +58,11 @@ export interface Comment {
 export interface AddFriendButtonProps {
   onClick: () => void;
 }
+
+export interface ProfilePropsWithFriend extends ProfileProps {
+  showAddFriendButton?: boolean;
+  onAddFriendClick?: () => void;
+  onClick?: () => void;
+  imageWidth: number;
+  imageHeight: number
+}

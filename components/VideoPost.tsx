@@ -1,4 +1,4 @@
-"use client";
+// VideoPost.tsx
 
 import React, { useState } from "react";
 import LikeDislike from "@/common/LikeDislike";
@@ -48,9 +48,7 @@ const VideoPost: React.FC<VideoPostProps> = ({
         </div>
 
         <div className="relative">
-          <video loop autoPlay className="w-full" controls>
-            <source src={videoUrl}  ></source>
-          </video>
+        <VideoPost videoUrl="/my-video.mp4" comments={[]} likeCount={0} dislikeCount={0} />
         </div>
       </div>
       <div className="p-4">
@@ -60,10 +58,10 @@ const VideoPost: React.FC<VideoPostProps> = ({
         {comments.map((comment, index) => (
           <li
             key={index}
-            className={`mb-2 ${index >= initialComments.length ? 'text-black' : 'text-white'}`}
+            className={`mb-2 ${index >= initialComments.length ? "text-black" : "text-white"}`}
           >
             <Link href={`/userProfile`}>
-              <UserProfile userName={comment.user} profileImage={""} userBioDetails={[]} />
+              <UserProfile userName={comment.user} profileImage={""} userBioDetails={[]} imageWidth={0} imageHeight={0} />
             </Link>
             {comment.text}
           </li>

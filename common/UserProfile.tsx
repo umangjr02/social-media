@@ -2,19 +2,17 @@
 
 import React from "react";
 import Image from "next/image";
-import { ProfileProps } from "@/types";
+import { ProfilePropsWithFriend } from "@/types";
 
-interface ProfilePropsWithFriend extends ProfileProps {
-  showAddFriendButton?: boolean;
-  onAddFriendClick?: () => void;
-  onClick?: () => void;
-}
+
 
 const UserProfile: React.FC<ProfilePropsWithFriend> = ({
   userName,
   showAddFriendButton,
   onAddFriendClick,
-  onClick
+  onClick,
+  imageWidth,
+  imageHeight
 }) => {
   return (
     <div className="flex items-center gap-4">
