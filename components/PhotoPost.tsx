@@ -6,6 +6,7 @@ import CommentInput from "@/common/CommentInput";
 import LikeDislike from "@/common/LikeDislike";
 import UserProfile from "@/common/UserProfile";
 import AddFriendButton from "@/common/AddFriendButton";
+import { useRouter } from "next/router";
 
 const PhotoPost: React.FC<PhotoPostProps> = ({
   imageUrl,
@@ -13,9 +14,9 @@ const PhotoPost: React.FC<PhotoPostProps> = ({
   dislikes: initialDislikes,
   comments: initialComments,
 }) => {
-  const [comments, setComments] = useState<Comment[]>(initialComments);
+  const [comments, setComments] = useState<Comment[]>([]);
   const [showAddFriendButton, setShowAddFriendButton] = useState(true);
-
+  
   const handleCommentSubmit = (commentText: string) => {
     if (commentText.trim() !== "") {
       const newComment: Comment = {
@@ -25,6 +26,7 @@ const PhotoPost: React.FC<PhotoPostProps> = ({
       setComments([...comments, newComment]);
     }
   };
+  // const router = useRouter()
 
   const handleAddFriendClick = () => {
     // Add your logic for adding a friend here
@@ -36,7 +38,7 @@ const PhotoPost: React.FC<PhotoPostProps> = ({
     <div className="max-w-md mx-auto bg-white shadow-md rounded-lg overflow-hidden md:max-w-lg lg:max-w-xl">
       <div className="p-4">
         <div className="p-4 flex justify-between items-center">
-          <Link href="/profile/page">
+          <Link href="/userProfile">
             <UserProfile
               userName="Umang Rathod"
               showAddFriendButton={showAddFriendButton}
@@ -60,9 +62,17 @@ const PhotoPost: React.FC<PhotoPostProps> = ({
             key={index}
             className={`mb-2 ${index >= initialComments.length ? "text-black" : "text-white"}`}
           >
-            <Link href="/profile/[username]" as={`/profile/${comment.user}`}>
-              <UserProfile userName={comment.user} profileImage={""} userBioDetails={[]} />
-            </Link>
+            <div>
+              <UserProfile 
+              // onClick={() => {
+              //   router.push({
+              //     pathname: "/userProfile",
+              //     query: { name: `Testing user` }
+              //   })
+              // }}
+              
+              userName={comment.user} profileImage={""} userBioDetails={[]} />
+            </div>
             {comment.text}
           </li>
         ))}

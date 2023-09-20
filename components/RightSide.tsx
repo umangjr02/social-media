@@ -66,7 +66,7 @@ const RightSide: React.FC = () => {
             key={friend.id}
             className="hover:bg-white hover:shadow-md hover:scale-105 text-sm transform transition duration-300 ease-in-out rounded-lg p-4 block"
           >
-            <Link href={`/profile/${friend.name}`}>
+            <Link href={`/userProfile`}>
               <div>
                 <div className="flex items-center">
                   <UserProfile

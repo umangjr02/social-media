@@ -3,17 +3,13 @@ export interface PhotoPostProps{
   likes: number;
   dislikes: number;
   comments: string[];
-  initialComments: string;
 }
 
 export interface VideoPostProps {
     videoUrl: string;
-    likes: number;
-    dislikes: number;
     comments: string[];
     likeCount: number;
     dislikeCount: number;
-    initialComments: string;
   }
 
 export interface UserDetail {

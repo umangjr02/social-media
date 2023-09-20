@@ -7,16 +7,18 @@ import { ProfileProps } from "@/types";
 interface ProfilePropsWithFriend extends ProfileProps {
   showAddFriendButton?: boolean;
   onAddFriendClick?: () => void;
+  onClick?: () => void;
 }
 
 const UserProfile: React.FC<ProfilePropsWithFriend> = ({
   userName,
   showAddFriendButton,
   onAddFriendClick,
+  onClick
 }) => {
   return (
     <div className="flex items-center gap-4">
-      <div className="w-10 h-10 rounded-full overflow-hidden">
+      <div className="w-10 h-10 rounded-full overflow-hidden" onClick={onClick}>
         <Image
           src="/user-profile.png"
           alt="User Profile"

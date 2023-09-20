@@ -33,12 +33,12 @@ const CommentInput: React.FC<CommentInputProps> = ({ onCommentSubmit }) => {
         onKeyUp={handleKeyUp}
       />
 
-      <button
-        className="text-blue-500 hover:text-blue-700 font-semibold"
+      <div
+        className="text-black"
         onClick={handleCommentSubmit}
       >
         Post
-      </button>
+      </div>
     </div>
   );
 };

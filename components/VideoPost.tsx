@@ -14,7 +14,7 @@ const VideoPost: React.FC<VideoPostProps> = ({
   dislikeCount: initialDislikes,
   comments: initialComments,
 }) => {
-  const [comments, setComments] = useState<Comment[]>(initialComments);
+  const [comments, setComments] = useState<Comment[]>([]);
   const [showAddFriendButton, setShowAddFriendButton] = useState(true);
 
   const handleCommentSubmit = (commentText: string) => {
@@ -35,20 +35,22 @@ const VideoPost: React.FC<VideoPostProps> = ({
     <div className="max-w-md mx-auto bg-white shadow-md rounded-lg overflow-hidden md:max-w-lg lg:max-w-xl">
       <div className="p-4">
         <div className="p-4 flex justify-between items-center">
-        <Link href="/profile/page">
-          <UserProfile
-            userName="Umang Rathod"
-            showAddFriendButton={showAddFriendButton}
-            onAddFriendClick={handleAddFriendClick}
-            profileImage={""}
-            userBioDetails={[]}
-          />
-        </Link>
+          <Link href="/userProfile">
+            <UserProfile
+              userName="Umang Rathod"
+              showAddFriendButton={showAddFriendButton}
+              onAddFriendClick={handleAddFriendClick}
+              profileImage={""}
+              userBioDetails={[]}
+            />
+          </Link>
           <AddFriendButton onClick={handleAddFriendClick} />
         </div>
 
         <div className="relative">
-          <video src={videoUrl} className="w-full" controls></video>
+          <video loop autoPlay className="w-full" controls>
+            <source src={videoUrl}  ></source>
+          </video>
         </div>
       </div>
       <div className="p-4">
@@ -60,7 +62,7 @@ const VideoPost: React.FC<VideoPostProps> = ({
             key={index}
             className={`mb-2 ${index >= initialComments.length ? 'text-black' : 'text-white'}`}
           >
-            <Link href={`/profile/[username]`} as={`/profile/${comment.user}`}>
+            <Link href={`/userProfile`}>
               <UserProfile userName={comment.user} profileImage={""} userBioDetails={[]} />
             </Link>
             {comment.text}

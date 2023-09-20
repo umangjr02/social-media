@@ -21,10 +21,10 @@ const Hero = () => {
           <div className="mb-6 w-full">
             <div className="flex flex-col items-center gap-5">
               <div className="w-full mt-4 lg:mt-0 pl-2">
-                <PhotoPost imageUrl={''} likes={0} dislikes={0} comments={[]} initialComments={''} />
+                <PhotoPost imageUrl={''} likes={0} dislikes={0} comments={[]} />
               </div>
               <div className="w-full mt-4 lg:mt-0 pl-2">
-                <VideoPost videoUrl={''} likes={0} dislikes={0} comments={[]} likeCount={0} dislikeCount={0} initialComments={''} />
+                <VideoPost videoUrl={'https://www.youtube.com/watch?v=4ncAlDhIfTw&ab_channel=WingsMusicStore'} comments={[]} likeCount={0} dislikeCount={0}/>
               </div>
             </div>
           </div>

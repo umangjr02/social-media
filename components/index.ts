@@ -6,7 +6,6 @@ import LeftBio from "./LeftBio";
 import PhotoPost from "./PhotoPost";
 import VideoPost from "./VideoPost";
 import UserProfile from "@/common/UserProfile";
-import Profile from "@/app/pages/[username]";
 
 export{
     Hero,
@@ -14,7 +13,6 @@ export{
     PhotoPost,
     VideoPost,
     UserProfile,
-    Profile,
     AddFriendButton,
     CommentInput,
     LikeDislike,
