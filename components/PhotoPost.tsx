@@ -1,11 +1,11 @@
-"use client";
-
 import React, { useState } from "react";
 import Image from "next/image";
-import { UserProfileProps, Comment, PhotoPostProps } from "@/types";
+import Link from "next/link";
+import { PhotoPostProps, Comment } from "@/types";
 import CommentInput from "@/common/CommentInput";
 import LikeDislike from "@/common/LikeDislike";
 import UserProfile from "@/common/UserProfile";
+import AddFriendButton from "@/common/AddFriendButton";
 
 const PhotoPost: React.FC<PhotoPostProps> = ({
   imageUrl,
@@ -35,23 +35,35 @@ const PhotoPost: React.FC<PhotoPostProps> = ({
   return (
     <div className="max-w-md mx-auto bg-white shadow-md rounded-lg overflow-hidden md:max-w-lg lg:max-w-xl">
       <div className="p-4">
-        <div className="p-4">
-          <UserProfile
-            userName="Umang Rathod"
-            showAddFriendButton={showAddFriendButton}
-            onAddFriendClick={handleAddFriendClick}
-          />
+        <div className="p-4 flex justify-between items-center">
+          <Link href="/profile/page">
+            <UserProfile
+              userName="Umang Rathod"
+              showAddFriendButton={showAddFriendButton}
+              onAddFriendClick={handleAddFriendClick}
+              profileImage={""}
+              userBioDetails={[]}
+            />
+          </Link>
+
+          <AddFriendButton onClick={handleAddFriendClick} />
         </div>
 
-        <Image src="/user-profile.png" alt="Photo" width={500} height={500} className="w-full h-auto" />
+        <Image src="/download.jpg" alt="Photo" width={500} height={500} className="w-full h-auto" />
       </div>
       <div className="p-4">
         <LikeDislike initialLikes={initialLikes} initialDislikes={initialDislikes} />
       </div>
       <ul className="p-4">
         {comments.map((comment, index) => (
-          <li key={index} className={`mb-2 ${index >= initialComments.length ? "text-black" : "text-white"}`}>
-            <UserProfile userName={comment.user} /> {comment.text}
+          <li
+            key={index}
+            className={`mb-2 ${index >= initialComments.length ? "text-black" : "text-white"}`}
+          >
+            <Link href="/profile/[username]" as={`/profile/${comment.user}`}>
+              <UserProfile userName={comment.user} profileImage={""} userBioDetails={[]} />
+            </Link>
+            {comment.text}
           </li>
         ))}
       </ul>

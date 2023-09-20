@@ -5,6 +5,7 @@ import PhotoPost from './PhotoPost';
 import VideoPost from './VideoPost';
 import LeftBio from './LeftBio';
 import { userDetails } from '@/types';
+import RightSide from './RightSide';
 
 const Hero = () => {
   return (
@@ -18,12 +19,11 @@ const Hero = () => {
 
         <div className="lg:w-1/2 flex bg-white p-4">
           <div className="mb-6 w-full">
-            <h2 className="text-gray-800 text-2xl font-bold mb-4">Photo Post</h2>
-            <div className="flex flex-col lg:flex-col">
-              <div className="w-full lg:w-1/2 pr-2">
+            <div className="flex flex-col items-center gap-5">
+              <div className="w-full mt-4 lg:mt-0 pl-2">
                 <PhotoPost imageUrl={''} likes={0} dislikes={0} comments={[]} initialComments={''} />
               </div>
-              <div className="w-full lg:w-1/2 mt-4 lg:mt-0 pl-2">
+              <div className="w-full mt-4 lg:mt-0 pl-2">
                 <VideoPost videoUrl={''} likes={0} dislikes={0} comments={[]} likeCount={0} dislikeCount={0} initialComments={''} />
               </div>
             </div>
@@ -31,7 +31,7 @@ const Hero = () => {
         </div>
 
         <div className="lg:w-1/4 p-4 right-left-container">
-          <h2 className="text-white text-2xl font-bold mb-4">Right Side</h2>
+          <h2 className="text-white text-2xl font-bold mb-4"><RightSide /></h2>
         </div>
       </div>
     </div>

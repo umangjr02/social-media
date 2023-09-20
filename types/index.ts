@@ -46,8 +46,10 @@ export interface LikeDislikeProps {
   initialDislikes: number;
 }
 
-export interface UserProfileProps {
+export interface ProfileProps {
+  profileImage: string;
   userName: string;
+  userBioDetails: { label: string; value: string }[];
   showAddFriendButton?: boolean;
   onAddFriendClick?: () => void;
 }
@@ -55,4 +57,8 @@ export interface UserProfileProps {
 export interface Comment {
   user: string;
   text: string;
+}
+
+export interface AddFriendButtonProps {
+  onClick: () => void;
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 
 interface CommentInputProps {
@@ -21,17 +23,18 @@ const CommentInput: React.FC<CommentInputProps> = ({ onCommentSubmit }) => {
   };
 
   return (
-    <div className="mt-4">
+    <div className="flex items-center rounded-lg px-2 w-full">
       <input
         type="text"
         placeholder="Add a comment..."
-        className="border-white-400 `border ${isClicked ? 'border-none' : 'border-gray-300'}` rounded-lg py-2 px-3 w-full text-black"
+        className="border bg-transparent text-sm text-gray-800 w-full pl-2 pr-2 py-2 comment-input"
         value={commentText}
         onChange={(e) => setCommentText(e.target.value)}
         onKeyUp={handleKeyUp}
       />
+
       <button
-        className="bg-gray-500 hover:bg-gray-700 text-black font-bold py-2 px-4 rounded mt-2"
+        className="text-blue-500 hover:text-blue-700 font-semibold"
         onClick={handleCommentSubmit}
       >
         Post

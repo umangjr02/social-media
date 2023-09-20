@@ -26,10 +26,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-/* .max-container-width{
+.max-container-width{
   @apply max-w-full;
 }
 
 .right-left-container{
   @apply max-w-md;
-} */
+}

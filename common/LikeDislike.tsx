@@ -1,3 +1,5 @@
+"use client"
+
 import { LikeDislikeProps } from "@/types";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -34,21 +36,29 @@ const LikeDislike: React.FC<LikeDislikeProps> = ({ initialLikes, initialDislikes
   };
 
   return (
-    <div className="flex items-center">
-      <button className={`flex items-center hover:bg-blue-700 bg-blue-500 text-black font-bold py-2 px-4 mr-2 rounded ${userAction === "like" ? 'glow-like' : ''}`} onClick={handleLike}>
-        <Image src="/like.png" alt="Like" width={20} height={20} className="h-5 w-5 mr-1" />{likes}
+    <div className="flex items-center gap-5 sm:gap-5">
+      <button
+        className={`flex items-center hover:bg-blue-700 bg-blue-500 text-black font-bold py-2 px-4 rounded ${userAction === "like" ? 'glow-like' : ''}`}
+        onClick={handleLike}
+      >
+        <Image src="/like.png" alt="Like" width={20} height={20} className="h-5 w-5 mr-1" />
+        {likes}
       </button>
-      <button className={`flex items-center hover:bg-red-700 bg-red-500 text-black font-bold py-2 px-4 rounded ${userAction === "dislike" ? 'glow-dislike' : ''}`} onClick={handleDislike}>
-        <Image src="/dislike.png" alt="Dislike" width={20} height={20} className="h-5 w-5 mr-1" />{dislikes}
+      <button
+        className={`flex items-center hover:bg-red-700 bg-red-500 text-black font-bold py-2 px-4 rounded ${userAction === "dislike" ? 'glow-dislike' : ''}`}
+        onClick={handleDislike}
+      >
+        <Image src="/dislike.png" alt="Dislike" width={20} height={20} className="h-5 w-5 mr-1" />
+        {dislikes}
       </button>
-      <style jsx>{`
+      {/* <style jsx>{`
         .glow-like {
-          box-shadow: 0 0 10px 2px #2196F3;
+          box-shadow: 0 0 10px 2px rgba(33, 150, 243, 0.5);
         }
         .glow-dislike {
-          box-shadow: 0 0 10px 2px #F44336;
+          box-shadow: 0 0 10px 2px rgba(244, 67, 54, 0.5);
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 };
