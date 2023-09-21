@@ -28,12 +28,12 @@ export interface UserInfoProps {
   
 export const userDetails = [ 
 { label: 'Bio/Description', value: 'This is the user bio or description.' },
-{ label: 'Formar Summer Internship at', value: 'User location' },
-{ label: 'Formar Student mentor at', value: 'User location' },
-{ label: 'Formar Web Coordinator', value: 'User location' },
-{ label: 'Formar Summer Internship', value: 'User location' },
-{ label: 'Formar Studied at', value: 'User location' },
-{ label: 'Formar Steering Committee Member at', value: 'User location' },
+{ label: 'Formar Summer Internship at', value: 'India' },
+{ label: 'Formar Student mentor at', value: 'Canada' },
+{ label: 'Formar Web Coordinator', value: 'ThreeArrow Technology' },
+{ label: 'Formar Summer Internship', value: 'Gujarat' },
+{ label: 'Formar Studied at', value: 'Uka tarsadiya University' },
+{ label: 'Formar Steering Committee Member at', value: 'Self Employeed' },
 { label: 'Workplace/College', value: 'User workplace or college' },
 ];
 
