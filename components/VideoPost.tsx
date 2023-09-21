@@ -9,7 +9,7 @@ import AddFriendButton from "@/common/AddFriendButton";
 import Link from "next/link";
 
 const VideoPost: React.FC<VideoPostProps> = ({
-  videoUrl, // Pass the external video URL as a prop
+  videoUrl,
   likeCount: initialLikes,
   dislikeCount: initialDislikes,
   comments: initialComments,
